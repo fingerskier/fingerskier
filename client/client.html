@@ -1,0 +1,49 @@
+<head>
+	<title>fingerskier</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+	{{> main}}
+</body>
+
+<template name="main">
+	<h1>fingerskier</h1>
+	<abbr id="top_quote">{{sussman}}</abbr>
+	<hr>
+	<ul class="nav nav-tabs">
+	  <li class="{{home_active}}">
+	  	<a href="#" id="home_tab">Home</a>
+	  </li>
+	  <li class="{{muse_active}}">
+	  	<a href="#" id="muse_tab">Musings</a>
+	  </li>
+	  <li class="{{code_active}}">
+	  	<a href="#" id="code_tab">Code Stash</a>
+	  </li>
+	  <li class="{{calc_active}}">
+	  	<a href="#" id="calc_tab">Calculator</a>
+	  </li>
+	  <li class="{{CV_active}}">
+	  	<a href="#" id="CV_tab">C.V.</a>
+	  </li>
+	</ul>
+
+	<div class="tab-content">
+		{{#if home_mode}}
+		  <div class="tab-pane {{home_active}}">{{> home}}</div>
+	  {{/if}}
+		{{#if muse_mode}}
+		  <div class="tab-pane {{muse_active}}">{{> muse}}</div>
+	  {{/if}}
+		{{#if code_mode}}
+		  <div class="tab-pane {{code_active}}">{{> code}}</div>
+	  {{/if}}
+		{{#if calc_mode}}
+		  <div class="tab-pane {{calc_active}}">{{> calc}}</div>
+	  {{/if}}
+		{{#if CV_mode}}
+		  <div class="tab-pane {{CV_active}}">{{> CV}}</div>
+	  {{/if}}
+	</div>
+</template>
